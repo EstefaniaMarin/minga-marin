@@ -5,7 +5,12 @@ import menu from '../assets/Menu.svg';
 import Sidebar from './Sidebar';
 
 function Navbar() {
-    const options = [{ title: "Home" }, { title: "Comics" }, { title: "My Comics" }, { title: "Favorites" }, { title: "Logout" }];
+    const options = [
+        { title: "Home", to:"/" },
+        { title: "Singin", to:"/singin" },
+        { title: "Register", to:"/register" },
+        { title: "Favorites", to:"/" },
+        { title: "Logout", to:"/" }];
     const [show, setShow] = useState(false);
     return (
         <>
@@ -16,7 +21,7 @@ function Navbar() {
                 <img className='w-[40px] h-[48px] inline-block lg:hidden mr-5 mt-5 lg:mr-[5%]' src={logoMobile} alt="Minga" />
                 <img className='w-[140px] h-[50px] hidden lg:inline-block mr-5 mt-5 lg:mr-[5%]' src={logoWeb} alt="Minga" />
             </nav>
-            { show && <Sidebar options={options} show={show} setShow={setShow} />}
+            {show && <Sidebar options={options} show={show} setShow={setShow} />}
         </>
     )
 }
