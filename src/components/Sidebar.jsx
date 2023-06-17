@@ -1,5 +1,6 @@
 import userImage from '../assets/estefaUser.png';
 import clouse from '../assets/clouse.svg';
+import { Link as Anchor } from 'react-router-dom';
 
 function Sidebar({ options, show, setShow }) {
     return (
@@ -17,9 +18,9 @@ function Sidebar({ options, show, setShow }) {
                 </li>
                 {
                     options?.map((each, i) =>
-                        <li key={i} className='cursor-pointer w-[382px] h-[48px] rounded-lg p-3 gap-3 text-center hover:bg-white hover:text-[#FF5722]'>
+                        <Anchor to={each.to} key={i} className='cursor-pointer w-[382px] h-[48px] rounded-lg p-3 gap-3 text-center hover:bg-white hover:text-[#FF5722]'>
                             <a className='font-poppins font-semibold text-[15px] leading-[24px] -tracking-[.01em]'> {each.title} </a>
-                        </li>)
+                        </Anchor>)
                 }
             </nav>
         </>

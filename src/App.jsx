@@ -1,14 +1,8 @@
-import Main from "./layouts/Main.jsx";
-import Index from "./pages/Index.jsx";
+import { RouterProvider } from "react-router-dom";
+import router from "./pages/router";
 
 function App() {
-	return (
-		<>
-			<Main>
-				<Index />
-			</Main>
-		</>
-	)
+	return (<RouterProvider router={router}/>)
 }
 
 export default App;
